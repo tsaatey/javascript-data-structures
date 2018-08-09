@@ -94,6 +94,56 @@ class LinkedList {
         return null;
     }
 
+    findByTransformation(value, transformation = (val) => val) {
+        if (!this.head) {
+            return null;
+        }
+
+        if (transformation(this.head.value) === value) {
+            return this.head;
+        }
+
+        if (transformation(this.tail.value) === value) {
+            return this.tail;
+        }
+
+        let currentNode = this.head.next;
+
+        while (currentNode) {
+            if (transformation(currentNode.value) === value) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+
+        return null;
+    }
+
+    findByCallback(value) {
+        if (!this.head) {
+            return null;
+        }
+
+        if (this.head.value === value) {
+            return this.head;
+        }
+
+        if (this.tail.value === value) {
+            return this.tail;
+        }
+
+        let currentNode = this.head.next;
+
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+
+        return null;
+    }
+
     deleteHead() {
         if (!this.head) {
             return null;
