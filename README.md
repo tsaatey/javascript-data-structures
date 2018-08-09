@@ -6,3 +6,5 @@ This repo contains examples of many JavaScript data structures.
 
 - Linked List
 - Doubly Linked List
+- Stack
+- Queue
